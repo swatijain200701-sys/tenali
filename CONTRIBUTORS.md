@@ -50,13 +50,13 @@
 <!-- live-snapshot:start -->
 | 🏆 Commits | 🔀 Merged PRs | 👥 Contributors | 🧩 Puzzles | 📚 Vocab | 🌍 GK |
 |----------:|------------:|--------------:|---------:|-------:|----:|
-| **1133** | **126** | **47** | **93** | **7,662** | **991** |
+| **1134** | **126** | **48** | **93** | **7,662** | **991** |
 <!-- live-snapshot:end -->
 
 ## 🥇 Leaderboard
 
 <!-- live-rank:start -->
-_Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions[bot]`](https://github.com/features/actions) on every push to `main` and every 12h._
+_Live data — last regenerated 2026-10-04 · auto-refreshed by [`github-actions[bot]`](https://github.com/features/actions) on every push to `main` and every 12h._
 
 | # | 👤 Real Name | 🔗 GitHub ID | 📝 Commits | 🔀 PRs | 🏷️ Role |
 |--:|:-------------|:-------------|----------:|-----:|:--------|
@@ -101,12 +101,13 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
 | 39. | **Remy baastin rayappan** | [remy-baastin](https://github.com/remy-baastin) | **2** | 1  | — |
 | 40. | **harsh**<br/><sub>↳ also commits as <b>Harsh</b></sub> | [harsh](https://github.com/harsh) | **2** | 0  | — |
 | 41. | **Anshul Kanodia** | [AnshulKanodia](https://github.com/AnshulKanodia) | **2** | 0  | Geometry Game Restoration |
-| 42. | **dynosuprovo**<br/><sub>↳ also commits as <b>DYNOSuprovo</b></sub> | [dynosuprovo](https://github.com/dynosuprovo) | **1** | 0  | — |
-| 43. | **athira-kv**<br/><sub>↳ also commits as <b>Athira Kv</b></sub> | [athira-kv](https://github.com/athira-kv) | **1** | 0  | — |
-| 44. | **garv-arora**<br/><sub>↳ also commits as <b>Garv Arora</b></sub> | [garv-arora](https://github.com/garv-arora) | **1** | 0  | — |
-| 45. | **pradeep-gupta**<br/><sub>↳ also commits as <b>Pradeep Gupta</b></sub> | [pradeep-gupta](https://github.com/pradeep-gupta) | **1** | 0  | — |
-| 46. | **priyanshu-kumar**<br/><sub>↳ also commits as <b>Priyanshu Kumar</b></sub> | [priyanshu-kumar](https://github.com/priyanshu-kumar) | **1** | 0  | — |
-| 47. | **Vasuki** | [vasuki-tenali](https://github.com/vasuki-tenali) | **1** | 0  | Infra contributor |
+| 42. | **Swati Jain** | [swatijain200701-sys](https://github.com/swatijain200701-sys) | **1** | 0  | — |
+| 43. | **dynosuprovo**<br/><sub>↳ also commits as <b>DYNOSuprovo</b></sub> | [dynosuprovo](https://github.com/dynosuprovo) | **1** | 0  | — |
+| 44. | **athira-kv**<br/><sub>↳ also commits as <b>Athira Kv</b></sub> | [athira-kv](https://github.com/athira-kv) | **1** | 0  | — |
+| 45. | **garv-arora**<br/><sub>↳ also commits as <b>Garv Arora</b></sub> | [garv-arora](https://github.com/garv-arora) | **1** | 0  | — |
+| 46. | **pradeep-gupta**<br/><sub>↳ also commits as <b>Pradeep Gupta</b></sub> | [pradeep-gupta](https://github.com/pradeep-gupta) | **1** | 0  | — |
+| 47. | **priyanshu-kumar**<br/><sub>↳ also commits as <b>Priyanshu Kumar</b></sub> | [priyanshu-kumar](https://github.com/priyanshu-kumar) | **1** | 0  | — |
+| 48. | **Vasuki** | [vasuki-tenali](https://github.com/vasuki-tenali) | **1** | 0  | Infra contributor |
 <!-- live-rank:end -->
 
 ---
@@ -263,6 +264,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><b>Lakshmi Varshini Nandula </b>
         <br/><a href="https://github.com/varshini-nandula">@varshini-nandula</a>
         <br/><sub>🏆 43 commits · 1 PR merged</sub>
+        <br/><sub>📍 Palakollu, India</sub>
       </td>
       <td valign="top" width="*">
         <h4>6. Profile Showcase & Offline Storage</h4>
@@ -1078,6 +1080,27 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
   <table>
     <tr>
       <td align="center" width="220">
+        <a href="https://github.com/swatijain200701-sys"><img src="https://avatars.githubusercontent.com/u/247923751?v=4&s=120" width="120" style="border-radius:50%; border:3px solid #888888;" alt="Swati Jain"/></a>
+        <br/><b>Swati Jain</b>
+        <br/><a href="https://github.com/swatijain200701-sys">@swatijain200701-sys</a>
+        <br/><sub>🏆 1 commits · 0 PRs merged</sub>
+      </td>
+      <td valign="top" width="*">
+        <h4>42. New Contributor</h4>
+        <ul>
+          <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
+          <li>📊 <b>1 commits</b> across this repo's history</li>
+          <li>🔗 <i>Add a <code>FALLBACK_PROFILES</code> entry in <code>scripts/update-readme-contributors.js</code> to enrich this card with real name, avatar, location, and curated feature list</i></li>
+        </ul>
+      </td>
+    </tr>
+  </table>
+</p>
+
+<p align="center">
+  <table>
+    <tr>
+      <td align="center" width="220">
         <a href="https://github.com/dynosuprovo"><img src="https://github.com/dynosuprovo.png?size=120&s=120" width="120" style="border-radius:50%; border:3px solid #888888;" alt="dynosuprovo"/></a>
         <br/><b>dynosuprovo</b>
         <br/><a href="https://github.com/dynosuprovo">@dynosuprovo</a>
@@ -1085,7 +1108,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🔗 also commits as: <b>DYNOSuprovo</b></sub>
       </td>
       <td valign="top" width="*">
-        <h4>42. New Contributor</h4>
+        <h4>43. New Contributor</h4>
         <ul>
           <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
           <li>📊 <b>1 commits</b> across this repo's history</li>
@@ -1107,7 +1130,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🔗 also commits as: <b>Athira Kv</b></sub>
       </td>
       <td valign="top" width="*">
-        <h4>43. New Contributor</h4>
+        <h4>44. New Contributor</h4>
         <ul>
           <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
           <li>📊 <b>1 commits</b> across this repo's history</li>
@@ -1129,7 +1152,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🔗 also commits as: <b>Garv Arora</b></sub>
       </td>
       <td valign="top" width="*">
-        <h4>44. New Contributor</h4>
+        <h4>45. New Contributor</h4>
         <ul>
           <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
           <li>📊 <b>1 commits</b> across this repo's history</li>
@@ -1151,7 +1174,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🔗 also commits as: <b>Pradeep Gupta</b></sub>
       </td>
       <td valign="top" width="*">
-        <h4>45. New Contributor</h4>
+        <h4>46. New Contributor</h4>
         <ul>
           <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
           <li>📊 <b>1 commits</b> across this repo's history</li>
@@ -1173,7 +1196,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🔗 also commits as: <b>Priyanshu Kumar</b></sub>
       </td>
       <td valign="top" width="*">
-        <h4>46. New Contributor</h4>
+        <h4>47. New Contributor</h4>
         <ul>
           <li>🆕 <b>New contributor</b> — auto-added by the readme-bot</li>
           <li>📊 <b>1 commits</b> across this repo's history</li>
@@ -1194,7 +1217,7 @@ _Live data — last regenerated 2026-09-27 · auto-refreshed by [`github-actions
         <br/><sub>🏆 1 commits · 0 PRs merged</sub>
       </td>
       <td valign="top" width="*">
-        <h4>47. Infra contributor</h4>
+        <h4>48. Infra contributor</h4>
         <ul>
           <li>🔧 <b>Single administrative / infrastructure commit</b> to the project</li>
           <li>📧 <i>Email was private — no public GitHub profile linked</i></li>
