@@ -121,14 +121,14 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 1: Broken Relative Path in `matrixmystics.js` Causes Runtime Crash & Failed Bank Initialization
-- **Where**: [`server/routes/matrixmystics.js:52`](file:///c:/Users/Swati/TENALI%20FINAL/server/routes/matrixmystics.js#L52)
+- **Where**: [`server/routes/matrixmystics.js:52`](https://github.com/vicharanashala/tenali/blob/main/server/routes/matrixmystics.js#L52)
 - **What is wrong**: The question bank loader specifies:
   ```javascript
   function loadMatrixMysticsBank() {
     const dir = path.join(__dirname, '..', 'linearalgebra', 'matrixmystics');
     ...
   ```
-  Because `matrixmystics.js` resides in `server/routes/`, `path.join(__dirname, '..')` resolves to `server/`. It then looks for `server/linearalgebra/matrixmystics`. However, `linearalgebra/` is located at the **project repository root** (`../../linearalgebra/matrixmystics`), exactly as properly resolved in [`server/routes/la-mission-quiz.js:15`](file:///c:/Users/Swati/TENALI%20FINAL/server/routes/la-mission-quiz.js#L15).
+  Because `matrixmystics.js` resides in `server/routes/`, `path.join(__dirname, '..')` resolves to `server/`. It then looks for `server/linearalgebra/matrixmystics`. However, `linearalgebra/` is located at the **project repository root** (`../../linearalgebra/matrixmystics`), exactly as properly resolved in [`server/routes/la-mission-quiz.js:15`](https://github.com/vicharanashala/tenali/blob/main/server/routes/la-mission-quiz.js#L15).
   During server startup and test initialization, this emits:
   ```text
   [matrixmystics] Failed to read directory: ENOENT: no such file or directory, scandir 'C:\Users\Swati\TENALI FINAL\server\linearalgebra\matrixmystics'
@@ -139,7 +139,7 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 2: Unbounded Concurrent File Descriptors in `loadJsonDir` Triggers `EMFILE: too many open files`
-- **Where**: [`server/index.js:700–706`](file:///c:/Users/Swati/TENALI%20FINAL/server/index.js#L700-L706) and [`server/index.js:1101–1107`](file:///c:/Users/Swati/TENALI%20FINAL/server/index.js#L1101-L1107)
+- **Where**: [`server/index.js:700–706`](https://github.com/vicharanashala/tenali/blob/main/server/index.js#L700-L706) and [`server/index.js:1101–1107`](https://github.com/vicharanashala/tenali/blob/main/server/index.js#L1101-L1107)
 - **What is wrong**: The helper `loadJsonDir(dir)` loads files as follows:
   ```javascript
   async function loadJsonDir(dir) {
@@ -161,7 +161,7 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 3: Shadowed and Unreachable Dead Route Definitions in `server/index.js`
-- **Where**: [`server/index.js:922–975`](file:///c:/Users/Swati/TENALI%20FINAL/server/index.js#L922-L975) (`quadratic-api`) and [`server/index.js:1012–1075`](file:///c:/Users/Swati/TENALI%20FINAL/server/index.js#L1012-L1075) (`sqrt-api`)
+- **Where**: [`server/index.js:922–975`](https://github.com/vicharanashala/tenali/blob/main/server/index.js#L922-L975) (`quadratic-api`) and [`server/index.js:1012–1075`](https://github.com/vicharanashala/tenali/blob/main/server/index.js#L1012-L1075) (`sqrt-api`)
 - **What is wrong**: During the Phase 2 router modularization, `quadratic-api` and `sqrt-api` were migrated into `server/routes/algebra.js` and `server/routes/arithmetic.js` and mounted at lines 577 and 580:
   ```javascript
   app.use('/sqrt-api', arithmeticRouter);
@@ -173,8 +173,8 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 4: Integration Test Suite Crashes Due to Hardcoded MongoDB Requirement
-- **Where**: [`server/__tests__/auth.test.js:24–31`](file:///c:/Users/Swati/TENALI%20FINAL/server/__tests__/auth.test.js#L24-L31) and [`server/__tests__/conceptPlaygrounds.test.js:32–49`](file:///c:/Users/Swati/TENALI%20FINAL/server/__tests__/conceptPlaygrounds.test.js#L32-L49)
-- **What is wrong**: While the Tenali application runtime gracefully falls back to an in-memory seed store when MongoDB is unavailable, the test suites unconditionally attempt a hardcoded connection:
+- **Where**: [`server/__tests__/auth.test.js:25`](https://github.com/vicharanashala/tenali/blob/main/server/__tests__/auth.test.js#L25)
+- **What is wrong**: While the Tenali application runtime gracefully falls back to an in-memory seed store when MongoDB is unavailable, only `auth.test.js` (line 25) calls `connectMongo(TEST_DB)`:
   ```javascript
   beforeAll(async () => {
     await auth.connectMongo(TEST_DB);
@@ -190,7 +190,7 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 5: Leftover Debug Endpoints and Unsanitized Request Logging in Production Server
-- **Where**: [`server/index.js:156–169`](file:///c:/Users/Swati/TENALI%20FINAL/server/index.js#L156-L169)
+- **Where**: [`server/index.js:156–169`](https://github.com/vicharanashala/tenali/blob/main/server/index.js#L156-L169)
 - **What is wrong**: The production server file contains raw debug logs and an exposed test route:
   ```javascript
   console.log("Treasure router imported");
@@ -213,7 +213,7 @@ During my code inspection, test runs, and static analysis across the repository,
 ---
 
 ### Gap 6: Frontend Test Deficit & Monolithic Component Scaling Bottleneck
-- **Where**: [`client/src/App.jsx`](file:///c:/Users/Swati/TENALI%20FINAL/client/src/App.jsx) (70,926 lines) and `client/src/*.test.jsx` (only 2 test files)
+- **Where**: [`client/src/App.jsx`](https://github.com/vicharanashala/tenali/blob/main/client/src/App.jsx) (70,926 lines) and `client/src/*.test.jsx` (only 2 test files)
 - **What is wrong**:
   1. `App.jsx` has expanded to over 70,000 lines, defining dozens of quiz apps, modal controllers, and state hooks inline in one file. While tile metadata was successfully extracted into `tiles.js`, `modeMap` remains embedded inside `App.jsx`, making it the single largest driver of git merge conflicts (tracked in issue #181).
   2. Frontend testing coverage is sparse: only 2 test suites (`detective.test.jsx` and `conceptApi.test.js`) exist in `client/src/`. Key math evaluation components, user input formatters, and quiz flows currently have no automated Vitest coverage.
@@ -250,7 +250,7 @@ To directly resolve the architectural and reliability gaps identified in Section
 
 ### Idea 2: Correcting Path Resolutions and Pruning Dead Routes Across Server Modules
 - **What**:
-  1. Fix the relative directory path in [`server/routes/matrixmystics.js`](file:///c:/Users/Swati/TENALI%20FINAL/server/routes/matrixmystics.js#L52) from `'..'` to `'..', '..'`.
+  1. Fix the relative directory path in [`server/routes/matrixmystics.js`](https://github.com/vicharanashala/tenali/blob/main/server/routes/matrixmystics.js#L52) from `'..'` to `'..', '..'`.
   2. Safely remove shadowed duplicate route blocks for `quadratic-api` and `sqrt-api` in `server/index.js` (lines 922–1075) to ensure the router modules in `server/routes/` are the unambiguous, single source of truth.
   3. Strip out the public `/test-12345` route and redundant `/treasurehunt-api/` console logging.
 - **Why**: Restores the Matrix Mystics bank immediately, cleans up 250+ lines of dead code, prevents developer confusion, and maintains production hygiene.
@@ -265,7 +265,7 @@ To directly resolve the architectural and reliability gaps identified in Section
 ---
 
 ### Idea 3: In-Memory MongoDB Test Harness with Automatic Skip Fallback
-- **What**: Update `server/__tests__/auth.test.js` and `server/__tests__/conceptPlaygrounds.test.js` to either use `mongodb-memory-server` in testing environments or gracefully skip database-dependent tests if a live MongoDB instance is unreachable.
+- **What**: Update `server/__tests__/auth.test.js` to either use `mongodb-memory-server` in testing environments or gracefully skip database-dependent tests if a live MongoDB instance is unreachable.
 - **Why**: Allows new contributors to run `npm test` successfully without needing a local MongoDB service pre-installed and running on their machines.
 - **How**: Check database availability before running the suite, or bind to an in-memory Mongo mock:
   ```javascript
@@ -299,29 +299,45 @@ To directly resolve the architectural and reliability gaps identified in Section
 
 ## 6. Your Contribution
 
-During my onboarding exploration, I conducted a comprehensive analysis of the Tenali codebase, examined running backend and frontend test suites, investigated build and linting pipelines, and prepared verified solutions for active issues.
+During my onboarding exploration, I conducted a comprehensive analysis of the Tenali codebase, examined running backend and frontend test suites, investigated build and linting pipelines, successfully shipped fixes for active issues, and prepared verified solutions for identified architectural gaps.
 
-### 1. Root Cause Analysis and Fix for Matrix Mystics Question Bank Crash
+### 1. Merged Pull Request [PR #401](https://github.com/vicharanashala/tenali/pull/401) (Issue [#182](https://github.com/vicharanashala/tenali/issues/182))
+- **Title**: `Solved issue #182 Curiosity Mode UI breakage, missing Visual Riddle images, duplicate Vachana menu entry, and quiz UI breakdown (Column Addition & Addition)`
+- **Commit**: `3406e6d2`
+- **What it changed**:
+  1. **Curiosity Mode UI Layout & Responsiveness**:
+     - Fixed broken layout constraints on `.card.card--curiosity` and `.curiosity-shell`.
+     - Refactored `.curiosity-workspace` to use fluid column proportions (`1.15fr / 0.85fr`) instead of rigid pixel widths.
+     - Converted `.curiosity-equation-row` from an inflexible fixed-column CSS grid to a flexible wrapping flexbox layout with centered numeric inputs.
+     - Updated `.curiosity-subgrid` and `.curiosity-edit-grid` to use responsive `auto-fit` tracks.
+     - Added `overflow-wrap: anywhere` and `word-break: break-word` across curiosity cards, formulas, notes, equations, and table comparison rows (`.curiosity-comparison-head`, `.curiosity-comparison-row`) to prevent text and formula overflow.
+  2. **Missing Visual Riddle Assets & Subpath Image Loading**:
+     - Added missing visual riddle images in `client/public/riddles/images/` (`game_puzzle_100.png`, `game_puzzle_104.png`, `game_puzzle_105.png`, `game_puzzle_112.png`, and option images `game_puzzle_112_option_a.png` through `game_puzzle_112_option_d.png`).
+     - Wrapped riddle and option image paths in `client/src/App.jsx` with `withBase()` to ensure correct path resolution across sub-path deployments (such as `/summership/`), and added `onError` fallback logging for failed image loads.
+  3. **Celebration Overlay & "Awesome!" Popup Styling**:
+     - Added comprehensive styling in `client/src/App.css` for `.celebration-overlay`, `.celebration-card`, `.celebration-title`, `.celebration-reward`, and animated falling confetti pieces (`.confetti-piece`, `@keyframes confetti-fall`).
+
+### 2. Root Cause Analysis and Fix for Matrix Mystics Question Bank Crash
 - **Problem**: As identified in Gap 1, `server/routes/matrixmystics.js` crashed during startup when attempting to read `server/linearalgebra/matrixmystics` (`ENOENT`), causing questions to fail to load.
 - **Solution Prepared**: Corrected the file path resolution in `server/routes/matrixmystics.js:52` to navigate two directory levels up:
   ```javascript
   const dir = path.join(__dirname, '..', '..', 'linearalgebra', 'matrixmystics');
   ```
 - **Validation**:
-  - Verified directory existence at `c:\Users\Swati\TENALI FINAL\linearalgebra\matrixmystics`.
+  - Verified directory existence at `linearalgebra/matrixmystics`.
   - Confirmed question JSON files parse correctly across all modules.
   - Eliminated the startup `ENOENT` warning completely.
 
-### 2. Diagnosis and Fix for `EMFILE` Descriptor Exhaustion During Startup
+### 3. Diagnosis and Fix for `EMFILE` Descriptor Exhaustion During Startup
 - **Problem**: Discovered that `loadVocabAsync()` in `server/index.js` reads 7,662 files concurrently via `Promise.all(files.map(...))`, overwhelming OS file descriptor tables and causing secondary failures (such as `playground2.test.js` failing with status 400 due to failed body-parser module loading).
 - **Solution Prepared**: Formulated the batched reader `loadJsonDirBatched` (batch size 64) to safely pool file reads, eliminating handle contention and preventing test failures.
 
-### 3. Verification of Clean Git State & Client Test Suite Health
+### 4. Verification of Clean Git State & Client Test Suite Health
 - **Testing & Environment Validation**:
-  - Cloned and initialized the complete repository into `c:\Users\Swati\TENALI FINAL`.
+  - Cloned and initialized the complete repository into the local development workspace.
   - Installed and audited dependencies for both `server/` and `client/`.
   - Executed the client test suite: `npm test` in `client/` passed with 26/26 tests passing across `detective.test.jsx` and `conceptApi.test.js`.
-  - Executed server contract tests: verified that 158 tests passed across the extracted route contracts (`routes/__tests__/apiContract.test.js`).
+  - Executed server contract tests: verified that 112 tests passed across the extracted route contracts (`routes/__tests__/apiContract.test.js`).
   - Documented full repository findings, architectural workflows, and actionable gap analysis in this onboarding document.
 
-This onboarding document represents my verified findings and prepares the foundation for my first issue-linked pull request on the Tenali platform.
+This onboarding document represents my verified findings and ongoing contributions to the Tenali platform.
